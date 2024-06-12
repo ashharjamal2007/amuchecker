@@ -238,22 +238,28 @@ function calculateMarks() {
   const selectedSet = document.getElementById('answerKeySet').value;
   const questions = answerKeys[selectedSet];
   let totalMarks = 0;
+  let answeredCount = 0;
+  let wrongCount = 0;
+  let unansweredCount = 0;
 
   questions.forEach(question => {
     const userAnswer = document.querySelector(`input[name="q${question.qno}"]:checked`);
     const questionElement = document.querySelector(`input[name="q${question.qno}"]`).closest('.question');
 
     if (userAnswer) {
+      answeredCount++;
       if (userAnswer.value === question.answer) {
         totalMarks += 1; // 1 mark for correct answer
         questionElement.classList.remove('wrong', 'unanswered');
         questionElement.classList.add('correct');
       } else {
         totalMarks -= 0.25; // -0.25 for incorrect answer
+        wrongCount++;
         questionElement.classList.remove('correct', 'unanswered');
         questionElement.classList.add('wrong');
       }
     } else {
+      unansweredCount++;
       questionElement.classList.remove('correct', 'wrong');
       questionElement.classList.add('unanswered');
     }
@@ -261,7 +267,12 @@ function calculateMarks() {
 
   const resultElement = document.getElementById('result');
   resultElement.innerHTML = `Your total marks: ${totalMarks}`;
+
+  document.getElementById('answeredCount').textContent = answeredCount;
+  document.getElementById('wrongCount').textContent = wrongCount;
+  document.getElementById('unansweredCount').textContent = unansweredCount;
 }
+
 
 // Load questions for the default selected answer key set
 loadQuestions();

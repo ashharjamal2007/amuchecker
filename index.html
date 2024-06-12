@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exam Marks Calculator by ashhar jamal</title>
   <style>
+    .correct {
+  background-color: #c8e6c9; /* Green */
+}
+
+.wrong {
+  background-color: #ffcdd2; /* Red */
+}
+
+.unanswered {
+  background-color: #f0f0f0; /* Gray */
+}
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -70,7 +82,16 @@
     <select id="answerKeySet" onchange="loadQuestions()">
       <option value="setA">Set A</option>
       <option value="setB">Set B</option>
+  
+      
+      
     </select>
+    <div>
+      <p>Answered: <span id="answeredCount">0</span></p>
+      <p>Wrong: <span id="wrongCount">0</span></p>
+      <p>Unanswered: <span id="unansweredCount">0</span></p>
+    </div>
+
     <div id="questions"></div>
     <button onclick="calculateMarks()">Calculate Marks</button>
     <p id="result"></p>
