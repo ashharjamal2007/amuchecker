@@ -5,73 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exam Marks Calculator by ashhar jamal</title>
   <style>
-    .correct {
-  background-color: #c8e6c9; /* Green */
-}
-
-.wrong {
-  background-color: #ffcdd2; /* Red */
-}
-
-.unanswered {
-  background-color: #f0f0f0; /* Gray */
-}
-
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 {
-      color: #333;
-    }
-    .container {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 80%;
-      max-width: 600px;
-      margin-top: 20px;
-    }
-    .question {
-      margin-bottom: 10px;
-    }
-    .question label {
-      margin-right: 10px;
-    }
-    .question input[type="radio"] {
-      margin-right: 5px;
-    }
-    .question.correct {
-      background-color: #c8e6c9;
-    }
-    .question.wrong {
-      background-color: #ffcdd2;
-    }
-    .question.unanswered {
-      background-color: #ffecb3;
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    #result {
-      margin-top: 20px;
-      font-size: 1.2em;
-      color: #333;
-    }
+    font-family: cursive;
+        background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question input[type="radio"] {
+    margin-right: 5px;
+}
+
+.question.correct {
+    background-color: #c8e6c9;
+}
+
+.question.wrong {
+    background-color: #ffcdd2;
+}
+
+.question.unanswered {
+    background-color: #ffecb3;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
   </style>
 </head>
 <body>
