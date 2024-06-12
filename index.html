@@ -3,15 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exam Marks Calculator</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Exam Marks Calculator by ashhar jamal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+    .question {
+      margin-bottom: 10px;
+    }
+    .question label {
+      margin-right: 10px;
+    }
+    .question input[type="radio"] {
+      margin-right: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Exam Marks Calculator by ashhar</h1>
-    <p>Enter your answers for each question below.</p>
+    <h1>Exam Marks Calculator by ashhar jamal</h1>
+    <p>Select the answer key set and enter your answers for each question below.</p>
+    <label for="answerKeySet">Select Answer Key Set:</label>
+    <select id="answerKeySet" onchange="loadQuestions()">
+      <option value="setA">Set A</option>
+      <option value="setB">Set B</option>
+    </select>
     <div id="questions"></div>
-    <br>
     <button onclick="calculateMarks()">Calculate Marks</button>
     <p id="result"></p>
   </div>
