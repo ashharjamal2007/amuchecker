@@ -216,13 +216,22 @@ function loadQuestions() {
     questionElement.classList.add('question');
     questionElement.innerHTML = `
       <label><b>Question ${question.qno}:</b></label>
-      <input type="radio" name="q${question.qno}" value="A"> A
-      <input type="radio" name="q${question.qno}" value="B"> B
-      <input type="radio" name="q${question.qno}" value="C"> C
-      <input type="radio" name="q${question.qno}" value="D"> D
+      <input type="radio" name="q${question.qno}" value="A" onclick="toggleRadio(this)"> A
+      <input type="radio" name="q${question.qno}" value="B" onclick="toggleRadio(this)"> B
+      <input type="radio" name="q${question.qno}" value="C" onclick="toggleRadio(this)"> C
+      <input type="radio" name="q${question.qno}" value="D" onclick="toggleRadio(this)"> D
     `;
     questionContainer.appendChild(questionElement);
   });
+}
+
+function toggleRadio(radio) {
+  if (radio.checked) {
+    const name = radio.name;
+    document.getElementsByName(name).forEach(el => {
+      if (el !== radio) el.checked = false;
+    });
+  }
 }
 
 function calculateMarks() {
@@ -232,12 +241,21 @@ function calculateMarks() {
 
   questions.forEach(question => {
     const userAnswer = document.querySelector(`input[name="q${question.qno}"]:checked`);
+    const questionElement = document.querySelector(`input[name="q${question.qno}"]`).closest('.question');
+
     if (userAnswer) {
       if (userAnswer.value === question.answer) {
         totalMarks += 1; // 1 mark for correct answer
+        questionElement.classList.remove('wrong', 'unanswered');
+        questionElement.classList.add('correct');
       } else {
         totalMarks -= 0.25; // -0.25 for incorrect answer
+        questionElement.classList.remove('correct', 'unanswered');
+        questionElement.classList.add('wrong');
       }
+    } else {
+      questionElement.classList.remove('correct', 'wrong');
+      questionElement.classList.add('unanswered');
     }
   });
 
