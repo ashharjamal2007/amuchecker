@@ -5,6 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exam Marks Calculator by ashhar jamal</title>
   <style>
+     body1 {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+            color: #333;
+        }
+        .container1 {
+            text-align: center;
+        }
+        .link-button1 {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #6a11cb;
+            background: -webkit-linear-gradient(to right, #2575fc, #6a11cb);
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .link-button1:hover {
+            background: #2575fc;
+        }
+
     body {
     font-family: cursive;
         background-color: #f4f4f4;
@@ -92,6 +123,10 @@ button:hover {
   </style>
 </head>
 <body>
+    <div class="container1">
+        <h5></h5>
+        <a href="pdf.html" class="link-button1">click here to View question paper</a>
+    </div>
   <div class="container">
     <h1>Exam Marks Calculator by ashhar jamal</h1>
     <p>Select the answer key set and enter your answers for each question below.</p>
@@ -103,6 +138,7 @@ button:hover {
       
       
     </select>
+   
     <div>
       <p>Answered: <span id="answeredCount">0</span></p>
       <p>Wrong: <span id="wrongCount">0</span></p>
