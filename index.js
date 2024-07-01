@@ -274,5 +274,5 @@ function calculateMarks() {
 }
 
 
-// Load questions for the default selected answer key set
+
 loadQuestions();
